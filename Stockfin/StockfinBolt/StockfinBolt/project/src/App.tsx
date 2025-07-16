@@ -32,6 +32,7 @@ import {
 } from "./utils/stockUtils";
 import { Terminal, Github, User, DollarSign, X, Radio } from "lucide-react";
 import { debugLog, createTrackedFetch } from "./utils/debugging";
+import LobbyPage from "./pages/Lobby";
 
 // Initialize fetch tracking
 const restoreOriginalFetch = createTrackedFetch();
@@ -1159,6 +1160,7 @@ function App() {
             stocks={{}}
             newsHistory={[]}
           />} />
+          <Route path='/lobby' element={<LobbyPage/>}/>
           <Route path="/competitions" element={<CompetitionsPage />} />
           <Route path="/learning" element={<LearningPage />} />
           <Route path="/simulations" element={<SimulationModesPage />} />

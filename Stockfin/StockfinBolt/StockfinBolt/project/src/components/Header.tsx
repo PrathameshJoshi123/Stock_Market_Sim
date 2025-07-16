@@ -25,10 +25,9 @@ export function Header({ cash, portfolioValue, totalValue, username, onEndSessio
   // Force values to be numbers and handle invalid inputs
   const cashValue = typeof cash === 'number' && !isNaN(cash) ? cash : 0;
   const portfolioVal = typeof portfolioValue === 'number' && !isNaN(portfolioValue) ? portfolioValue : 0;
-  // Explicitly calculate total from the sanitized values - always recalculate to ensure accuracy
+  
   const totalVal = cashValue + portfolioVal;
 
-  // Add debug logging to help troubleshoot value updates
   React.useEffect(() => {
     console.log("Header received values:", {
       cash,
